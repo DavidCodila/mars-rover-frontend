@@ -7,13 +7,14 @@ import { useState } from 'react';
 function App() {
   const [mapSize, setMapsize] = useState("");
   function handleStartGame() {
-    var URL = "http://localhost:80/start-game/";
+    var URL = "http://localhost:80/start-game";
+    const dataToSend = {"request": mapSize}
       fetch(URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(mapSize),
+        body: JSON.stringify(dataToSend),
       })
       .then(response => response.json())
         .then(data => {
