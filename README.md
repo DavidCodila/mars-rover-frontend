@@ -5,5 +5,5 @@
   <li>git clone git@github.com:TunaSalad343/mars-rover-frontend.git</li>
   <li>cd mars-rover-frontend</li>
   <li>bun install</li>
-  <li>bun start dev</li>
+  <li>bun run dev</li>
 </ol>
