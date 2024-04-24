@@ -17,6 +17,7 @@ function App() {
       })
       .then(response => response.json())
         .then(data => {
+          console.log(data);
           //router.navigate("/game");
         })
         .catch(error => {
