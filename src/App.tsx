@@ -28,7 +28,7 @@ function App() {
   }
 
   function ButtonLink() {
-    return <Link to={"/game-page/"} style={{ textDecoration: 'none' }}><Button sx={{ display: "block", marginTop: 2, left :"35%", width: "30%"}} variant="contained"  onClick= {handleStartGame}>Start Game!</Button></Link>;
+    return <Link to={"/game-page/"} style={{ textDecoration: 'none' }}><Button name={"startButton"} sx={{ display: "block", marginTop: 2, left :"35%", width: "30%"}} variant="contained"  onClick= {handleStartGame}>Start Game!</Button></Link>;
   }
 
   return (
