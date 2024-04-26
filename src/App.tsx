@@ -3,7 +3,8 @@ import '@fontsource/roboto/300.css';
 import { Button, Container, TextField } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { id } from "./id.tsx";
+import { router } from "./main.tsx"
 
 
 function App() {
@@ -20,15 +21,13 @@ function App() {
       })
       .then(response => response.json())
         .then(data => {
-          console.log(data);
+          console.log("Returned acount id: "+ data.accountId)
+          id.push(data.accountId);
+          router.navigate("/game-page");
         })
         .catch(error => {
           console.error(error);
         })
-  }
-
-  function ButtonLink() {
-    return <Link to={"/game-page/"} style={{ textDecoration: 'none' }}><Button name={"startButton"} sx={{ display: "block", marginTop: 2, left :"35%", width: "30%"}} variant="contained"  onClick= {handleStartGame}>Start Game!</Button></Link>;
   }
 
   return (
@@ -41,7 +40,7 @@ function App() {
         How big is your map?
       </Typography>
       <TextField sx = {{marginLeft : 20, marginTop: 2}} id="numberOfSquares" label="Enter squares per side" variant="outlined" onChange={(e)=>setMapsize(e.target.value)}/>
-      <ButtonLink />
+      <Button name={"startButton"} sx={{ display: "block", marginTop: 2, left :"35%", width: "30%"}} variant="contained"  onClick= {handleStartGame}>Start Game!</Button>;
     </Container>
     </>
   )
